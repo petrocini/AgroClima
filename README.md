@@ -34,3 +34,8 @@ docker compose up --build
 
 - Dashboard: http://localhost:3000
 - API Docs (Swagger): http://localhost:8000/docs
+
+## 🔮 Melhorias Futuras
+
+- **Testes Automatizados:** Implementação de testes unitários (Pytest/Jest) e testes E2E (Cypress/Playwright) para garantir a estabilidade.
+- **PWA (Progressive Web App):** Tornar o frontend instalável em dispositivos móveis para melhor experiência offline no campo.
