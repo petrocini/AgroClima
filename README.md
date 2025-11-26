@@ -1,45 +1,36 @@
-AgroClima - Aplicação Meteorológica para Produtores Rurais
+# AgroClima
 
-Uma aplicação fullstack que fornece dados climáticos simplificados (temperatura, chuva, umidade e vento) para auxiliar na tomada de decisão no campo.
+Aplicação fullstack para monitoramento e visualização de dados meteorológicos. O sistema consome dados externos, processa as informações e as apresenta em um dashboard simplificado.
 
-Estrutura do Projeto
+## 🚀 Tecnologias
 
-Backend: Python com FastAPI (Porta 8000). Atua como wrapper da API Open-Meteo, implementando cache e validação.
+- **Backend:** Python, FastAPI, Pydantic, HTTPX (Async), CacheTools.
+- **Frontend:** Next.js 14 (App Router), React, Tailwind CSS.
+- **Infraestrutura:** Docker, Docker Compose.
+- **API Externa:** Open-Meteo.
 
-Frontend: Next.js 14 com Tailwind CSS (Porta 3000). Interface moderna e responsiva.
+## ⚙️ Funcionalidades
 
-Infra: Docker Compose.
+- **API Wrapper:** Backend atua como intermediário seguro, unificando a busca de geolocalização e dados climáticos em um único endpoint.
+- **Otimização:** Implementação de cache em memória (TTL) para reduzir latência e consumo da API externa.
+- **Interface:** UI desenvolvida com Tailwind CSS, responsiva e com feedback visual de carregamento e erros.
+- **Resiliência:** Tratamento de erros para falhas de conexão ou cidades não encontradas.
 
-Pré-requisitos
+## 📦 Como Executar
 
-Docker e Docker Compose instalados.
+### Pré-requisitos
 
-Como Executar
+- Docker e Docker Compose instalados.
 
-Certifique-se de que os arquivos estão organizados nas pastas corretas:
+### Rodando o Projeto
 
-backend/ (main.py, requirements.txt, Dockerfile)
+1. Na raiz do projeto, suba os containers:
 
-frontend/ (package.json, Dockerfile, next.config.js, tailwind.config.js, src/app/...)
-
-docker-compose.yaml na raiz.
-
-Execute o comando na raiz do projeto:
-
+```bash
 docker compose up --build
+```
 
-Acesse a aplicação em:
+2. Acesse os serviços:
 
-Frontend: http://localhost:3000
-
-Documentação da API (Swagger): http://localhost:8000/docs
-
-Funcionalidades Técnicas
-
-Backend Wrapper: A API recebe o nome da cidade, converte para coordenadas (Geocoding) e busca o clima.
-
-Cache: Implementado cache em memória (TTL) no backend para evitar chamadas redundantes à API externa.
-
-HTTPS: O backend faz chamadas HTTPS seguras para o Open-Meteo.
-
-Design System: Uso de cores terrosas e verdes (Tailwind) para alinhar ao contexto rural.
+- Dashboard: http://localhost:3000
+- API Docs (Swagger): http://localhost:8000/docs
